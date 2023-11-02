@@ -31,7 +31,7 @@ const stripForQuery = (row: Partial<ProductItem>) => {
 
 
 const buildFullPrompt = async (productId: string, count: number) => {
-  const longProductList = await getPossibleRecommendedProducts(productId, 8);
+  const longProductList = await getPossibleRecommendedProducts(productId, 7);
   const strippedProductList = longProductList.map((row) => stripBlankFields(stripForQuery(row)));
   const stringProductList = strippedProductList.map((product, ind) => "PRODUCT NUMBER " + ind + ": " + JSON.stringify(product));
 
